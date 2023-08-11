@@ -9,7 +9,7 @@ Criar brachs de dev e prod fazendo as configurações de push necessárias.
 ## Passo 3 - Criação de pipeline CI com Cucumber
 Na pasta "/.github/workflows" para reconhecimento do Github que a pipeline deve ser executada seguindo regras definidas a seguir:
 
-    ```
+```
     name: Testes Automatizados  # Nome do fluxo de trabalho
   
     on: [push]  # Disparar o fluxo de trabalho quando houver push no repositório
@@ -34,7 +34,7 @@ Na pasta "/.github/workflows" para reconhecimento do Github que a pipeline deve 
     
         - name: Executar testes com Behave  # Nome da etapa: Executa os testes com o Behave
           run: behave  # Comando para executar os testes com o Behave
-    ```
+```
 Fazer testes de pull request no github mostrando como um CI deve funcionar usando o esquema de branchs criado.
 Ok, garatimos que os testes estão passando e que esta tudo correto com eles mas como eu garanto que TODO meu código esta testado?
 
