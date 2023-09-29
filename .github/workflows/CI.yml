@@ -1,0 +1,31 @@
+name: Testes Automatizados
+
+on: [push] #
+
+jobs:
+  testes:
+    name: Testes TDD
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v2
+
+    - name: Configurar ambiente Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Instalar dependências
+      run: pip install coverage pytest
+
+    - name: Executar testes com Behave
+      run: pytest
+
+    - name: Run tests and measure coverage
+      run: coverage run -m pytest
+
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
