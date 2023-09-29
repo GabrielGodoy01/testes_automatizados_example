@@ -26,6 +26,6 @@ class Test_Calculator:
         assert result == 3
     
      # E SE FOR DIVISÃO POR ZERO?????????
-    # def test_divisao_por_zero(self):
-    #     result = Calculator.divisao(9, 0)
-    #     assert result == 0
+    def test_divisao_por_zero(self):
+        result = Calculator.divisao(9, 0)
+        assert result == 0
